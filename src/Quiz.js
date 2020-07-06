@@ -7,14 +7,13 @@ class Quiz extends Component {
         super(props);
         this.state = {quiz_position: 1};
     }
-    
     render() {
       return (
-        <div className="QuizQuestion">
-            {quizData.quiz_questions[this.state.quiz_position - 1].instruction_text}
+        <div>
+            <div className="QuizQuestion">{quizData.quiz_questions[this.state.quiz_position - 1].instruction_text}</div>
         </div>
       )
     }
   }
-  
-  export default Quiz
+
+export default Quiz
