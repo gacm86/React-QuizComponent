@@ -5,8 +5,6 @@ class QuizQuestionButton extends Component {
         super(props);
     }
     handleClick() {
-      // console.log('Se hizo click');
-      // console.log(this.props.clickHandler);
       this.props.clickHandler(this.props.button_text);
     }
     render() {

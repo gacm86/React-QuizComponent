@@ -10,8 +10,11 @@ class Quiz extends Component {
         this.state = {quiz_position : 1 }
     }
     showNextQuestion(){
-      console.log('showNextQuestion');
       this.state.quiz_position++;
+      this.forceUpdate();
+    }
+    handleResetClick(){
+      this.setState({quiz_position : 1})
     }
     render() {
       const isQuizEnd = this.state.quiz_position - 1 === quizData.quiz_questions.length;
@@ -19,7 +22,7 @@ class Quiz extends Component {
         <div>
             <div>
               {isQuizEnd ? (
-                <QuizEnd/>
+                <QuizEnd resetClickHandler={this.handleResetClick.bind(this)}/>
               ): <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} showNextQuestionHandler={this.showNextQuestion.bind(this)}/>}
             </div>
         </div>

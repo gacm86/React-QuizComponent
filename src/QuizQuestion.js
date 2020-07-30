@@ -5,6 +5,7 @@ import QuizQuestionButton from './QuizQuestionButton'
 class QuizQuestion extends Component {
     constructor(props) {
         super(props);
+        console.log("QuizQuestion" + this.props.quiz_question.instruction_text);
         this.clickHandler = this.handleClick.bind(this);
         this.state = {incorrectAnswer : false};
     }
@@ -12,7 +13,6 @@ class QuizQuestion extends Component {
       if (buttonText === this.props.quiz_question.answer)
       {
         this.setState({incorrectAnswer : false});
-        console.log('QuizQuestion - correcto: respuesta ' + buttonText + ' ' + this.props.quiz_question.answer );
         this.props.showNextQuestionHandler();
       }
       else{
